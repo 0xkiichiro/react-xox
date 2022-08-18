@@ -40,6 +40,19 @@ const GameBoard = () => {
     console.log(e.target.id);
   };
 
+  const calculateWin = () => {
+    const playerArr = [];
+    const computerArr = [];
+    boardArr.filter((item) =>
+      item.content == "X" ? playerArr.push(item) : computerArr.push(item)
+    );
+    if (playerArr.contains()) {
+    } else if (computerArr.contains()) {
+    } else if (null) {
+      // add turn counter or a way to know it is done
+    }
+  };
+
   return (
     <div className={boardStyle["game-board"]}>
       {boardArr.map((sq, index) => (
