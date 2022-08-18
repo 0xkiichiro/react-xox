@@ -1,0 +1,11 @@
+.page-container {
+  width: 1440px;
+  height: 100vh;
+  background-color: $colorBg;
+  margin: auto;
+  padding: 2.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

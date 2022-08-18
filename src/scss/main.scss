@@ -1,6 +1,6 @@
 @import "./abstracts/variables";
-@import "./base/_reset.scss";
-@import "./pages/_welcomePage.scss";
+@import "./base/_reset";
+@import "./pages/_welcomePage", "./pages/gamePage";
 
 * {
   font-family: "IBM Plex Sans", sans-serif;
