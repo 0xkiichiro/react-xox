@@ -10,4 +10,13 @@
   align-items: center;
 
   font-size: 5rem;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $colorBlueLight;
+  }
+
+  &:active {
+    background-color: $colorBlueDark;
+  }
 }
