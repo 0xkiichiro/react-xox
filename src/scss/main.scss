@@ -1,0 +1,8 @@
+@import "./abstracts/variables";
+@import "./base/_reset.scss";
+@import "./pages/_welcomePage.scss";
+
+* {
+  font-family: "IBM Plex Sans", sans-serif;
+  background-color: $colorBg;
+}

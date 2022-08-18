@@ -1,0 +1,37 @@
+.page-container {
+  width: 1440px;
+  height: 100vh;
+  background-color: $colorBg;
+  margin: auto;
+  padding: 2.5rem;
+  .heading-1 {
+    color: $colorBlueDark;
+  }
+  .heading-2 {
+    color: $colorBlueDark;
+    margin-top: 2.5rem;
+  }
+
+  .p {
+    color: $colorBlue;
+    margin-top: 1rem;
+  }
+
+  .btn {
+    border: none;
+    outline: none;
+    background-color: $colorBlue;
+    padding: 1rem 2rem;
+    border-radius: 5rem;
+    margin: 0 auto;
+    margin-top: 10rem;
+    color: white;
+    font-weight: bold;
+    &:hover {
+      background-color: $colorBlueDark;
+    }
+    &:active {
+      transform: scale(1.1);
+    }
+  }
+}
