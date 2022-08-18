@@ -17,13 +17,10 @@ const GameBoard = () => {
 
   const handleClick = (e) => {
     console.log(boardArr);
-    boardArr.map(
-      (item) =>
-        item.id == e.target.id &&
-        setBoardArr([
-          { id: item.id, content: "X" },
-          ...boardArr.filter((item) => item.id != e.target.id),
-        ])
+    setBoardArr(
+      boardArr.map((item) =>
+        item.id == e.target.id ? { ...item, content: "X" } : item
+      )
     );
     console.log(e.target.id);
   };
