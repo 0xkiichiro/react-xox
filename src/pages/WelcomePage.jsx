@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const WelcomePage = () => {
   const navigate = useNavigate();
   return (
-    <div className="page-container">
+    <div className="welcome-page-container">
       <h1 className="heading-1">Welcome to the 0xkiichiro's XOX Game</h1>
       <h2 className="heading-2">Rules</h2>
       <ul className="p">

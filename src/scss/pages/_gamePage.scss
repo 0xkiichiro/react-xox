@@ -1,4 +1,4 @@
-.page-container {
+.game-page-container {
   width: 1440px;
   height: 100vh;
   background-color: $colorBg;
@@ -6,6 +6,7 @@
   padding: 2.5rem;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }

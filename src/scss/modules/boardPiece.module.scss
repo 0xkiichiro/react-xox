@@ -1,0 +1,13 @@
+@import "../abstracts/variables";
+
+.sq {
+  height: 200px;
+  width: 33.33%;
+  border: 1px solid $colorBlue;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 5rem;
+}

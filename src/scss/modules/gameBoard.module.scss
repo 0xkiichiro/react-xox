@@ -1,0 +1,10 @@
+@import "../abstracts/variables";
+
+.game-board {
+  height: 600px;
+  width: 50%;
+  // border: 1px solid $colorBlue;
+
+  display: flex;
+  flex-wrap: wrap;
+}
