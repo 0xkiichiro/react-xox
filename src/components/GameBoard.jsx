@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import boardStyle from "../scss/modules/gameBoard.module.scss";
 import BoardPiece from "./BoardPiece";
 
@@ -24,8 +24,11 @@ const GameBoard = () => {
     [2, 6, 8],
     [0, 4, 8],
   ];
+  const playerArr = [];
+  const computerArr = [];
 
   const handleClick = (e) => {
+    let computerTurn = false;
     console.log(boardArr);
     // players turn
     setBoardArr(
@@ -35,19 +38,40 @@ const GameBoard = () => {
           : item
       )
     );
+
     //computers turn
+    //TODO: work on how to return only 1 random move at a a time
+    computerTurn = true;
+    setBoardArr(
+      boardArr.map(
+        (item) =>
+          item.content == "" &&
+          computerTurn &&
+          ({ ...item, content: "O" }, (computerTurn = false))
+      )
+    );
 
     console.log(e.target.id);
   };
 
+  //* calculating players and computers scores after each change on boardArr
+  useEffect(() => {
+    boardArr.filter((item) => {
+      if (item.content == "X") {
+        playerArr.push(item);
+      } else if (item.content == "O") {
+        computerArr.push(item);
+      }
+    });
+    console.log("playerArr: ", playerArr);
+    console.log("computerArr: ", computerArr);
+    // calculateWin();
+  }, [boardArr]);
+
   const calculateWin = () => {
-    const playerArr = [];
-    const computerArr = [];
-    boardArr.filter((item) =>
-      item.content == "X" ? playerArr.push(item) : computerArr.push(item)
-    );
-    if (playerArr.contains()) {
-    } else if (computerArr.contains()) {
+    if (winConditions.map((item) => item.map((id) => console.log(id)))) {
+      // alert("Player wins!");
+    } else if (computerArr.includes()) {
     } else if (null) {
       // add turn counter or a way to know it is done
     }
