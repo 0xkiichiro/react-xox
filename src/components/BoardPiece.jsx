@@ -1,6 +1,6 @@
 import boardPieceStyle from "../scss/modules/boardPiece.module.scss";
 
-const BoardPiece = ({ boardArr, setBoardArr, handleClick, id }) => {
+const BoardPiece = ({ boardArr, handleClick, id }) => {
   return (
     <div
       className={boardPieceStyle["sq"]}
