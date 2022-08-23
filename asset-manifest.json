@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-xox/static/css/main.becb6301.css",
+    "main.js": "/react-xox/static/js/main.97a49c21.js",
+    "index.html": "/react-xox/index.html",
+    "main.becb6301.css.map": "/react-xox/static/css/main.becb6301.css.map",
+    "main.97a49c21.js.map": "/react-xox/static/js/main.97a49c21.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.becb6301.css",
+    "static/js/main.97a49c21.js"
+  ]
+}
