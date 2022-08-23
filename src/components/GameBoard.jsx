@@ -27,10 +27,7 @@ const GameBoard = () => {
   const playerArr = [];
   const computerArr = [];
 
-  const handleClick = (e) => {
-    let computerTurn = false;
-    console.log(boardArr);
-    // players turn
+  const playerPlay = (e) => {
     setBoardArr(
       boardArr.map((item) =>
         item.id == e.target.id && item.content == ""
@@ -38,18 +35,32 @@ const GameBoard = () => {
           : item
       )
     );
+    console.log(boardArr);
+  };
 
+  const computerPlay = (e) => {
+    //* this will be called back if e.target.id == computer guess
+    let computerGuess = Math.floor(Math.random() * 9);
+    console.log(computerGuess);
+    if (e.target.value == computerGuess) {
+      computerPlay(e);
+    } else {
+      setBoardArr(
+        boardArr.map((item) =>
+          item.content == "" && item.id == computerGuess
+            ? { ...item, content: "O" }
+            : item
+        )
+      );
+      console.log(boardArr);
+    }
+  };
+
+  const handleClick = (e) => {
+    // players turn
+    playerPlay(e);
     //computers turn
-    //TODO: work on how to return only 1 random move at a a time
-    computerTurn = true;
-    setBoardArr(
-      boardArr.map(
-        (item) =>
-          item.content == "" &&
-          computerTurn &&
-          ({ ...item, content: "O" }, (computerTurn = false))
-      )
-    );
+    computerPlay(e);
 
     console.log(e.target.id);
   };
@@ -68,14 +79,14 @@ const GameBoard = () => {
     // calculateWin();
   }, [boardArr]);
 
-  const calculateWin = () => {
-    if (winConditions.map((item) => item.map((id) => console.log(id)))) {
-      // alert("Player wins!");
-    } else if (computerArr.includes()) {
-    } else if (null) {
-      // add turn counter or a way to know it is done
-    }
-  };
+  // const calculateWin = () => {
+  //   if (winConditions.map((item) => item.map((id) => console.log(id)))) {
+  //     // alert("Player wins!");
+  //   } else if (computerArr.includes()) {
+  //   } else if (null) {
+  //     // add turn counter or a way to know it is done
+  //   }
+  // };
 
   return (
     <div className={boardStyle["game-board"]}>
