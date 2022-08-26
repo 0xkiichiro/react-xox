@@ -28,13 +28,14 @@ const GameBoard = () => {
           : item
       )
     );
+    console.log("player plays");
   };
 
   const computerPlay = (e, boardArr) => {
     //* this fx will call itself until it picks a random number & checks item.id == computerGuess with content = "" in boardArr
     let computerGuess = Math.floor(Math.random() * 9);
     if (
-      e.target.innerHTML == computerGuess ||
+      e.target.id == computerGuess ||
       playerArr.includes(computerGuess) ||
       computerArr.includes(computerGuess)
     ) {
@@ -48,16 +49,20 @@ const GameBoard = () => {
             : item
         )
       );
+      console.log("computer plays" + computerGuess);
     }
   };
 
   const handleClick = (e) => {
     //* check if we clicked an empty box
     if (!e.target.innerHTML) {
-      playerPlay(e);
       // players turn
+      playerPlay(e);
       //computers turn
-      computerPlay(e);
+
+      if (playerArr.length + computerArr.length < 7) {
+        computerPlay(e);
+      }
     } else {
       alert("Pick an empty box!");
     }
